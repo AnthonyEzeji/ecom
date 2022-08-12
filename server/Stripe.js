@@ -4,7 +4,7 @@ const router = express.Router()
 
 router.post('/',async (req,res)=>{
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-  console.log(req.body)
+
   try {
     const params = {
       submit_type: 'pay',

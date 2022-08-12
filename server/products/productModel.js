@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const schema = mongoose.Schema({
     title:String,
-    catergory:String,
+    category:String,
     image:String,
     description:String,
     stock:Number,

@@ -6,6 +6,8 @@ import "../css/Landing.css"
 import ArrowRightAltSharpIcon from '@mui/icons-material/ArrowRightAltSharp';
 import { Button } from '@mui/material'
 import Drawer from '../components/Drawer.js'
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 function Landing() {
  
   
@@ -86,12 +88,12 @@ function Landing() {
     
     <div id= "shop-btn"><p>IN STOCK AND ON SALE! SHOP DISCOUNTED PRODUCTS AND GET THEM DELIVERED ASAP </p></div>
     <div className="preview">
-    <Button onClick={()=>{changeIndex(-1)}}>left</Button>
+    <Button onClick={()=>{changeIndex(-1)}}><ArrowCircleLeftIcon style = {{color:'black'}}/></Button>
     {previewProducts?.map((product,index)=>{
    
    return(<Product product={product}/>)
    })}
-     <Button onClick={()=>{changeIndex(1)}}>right</Button>
+     <Button onClick={()=>{changeIndex(1)}}><ArrowCircleRightIcon style = {{color:'black'}}/></Button>
     </div>
 
  </div>

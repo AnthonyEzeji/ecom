@@ -17,4 +17,3 @@ app.use('/api/stripe', StripeRoute)
 app.listen(process.env.PORT||5000, ()=>{
     console.log(`Server successfully running on port ${process.env.PORT||5000}...`)
 })
-console.log(process.env.STRIPE_SECRET_KEY)

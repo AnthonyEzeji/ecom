@@ -4,16 +4,22 @@ var router = express.Router()
 
 router.get('/',async (req,res)=>{
 
-    await productModel.find({}).then((docs,err)=>{
-        if(err){
-            res.send({mess:err})
-        }else{
-            res.send(docs)
-        }
-    })
+    try {
+        await productModel.find({}).then((docs,err)=>{
+            if(err){
+                res.send({mess:err})
+            }else{
+                res.send(docs)
+            }
+        })
+    } catch (error) {
+        res.send({message:error})
+    console.log(error)
+    }
+   
 })
 router.get('/:_id',async (req,res)=>{
-
+try {
     await productModel.findById(req.params._id).then((doc,err)=>{
         if(err){
             res.send({mess:err})
@@ -21,10 +27,17 @@ router.get('/:_id',async (req,res)=>{
             res.send(doc)
         }
     })
+    
+} catch (error) {
+    res.send({message:error})
+    console.log(error)
+}
+    
 })
 
 router.post('/', async (req,res)=>{
-
+    console.log(req.body)
+try {
     const product = new productModel({ title:req.body.title,
         image:req.body.image,
         description:req.body.description,
@@ -36,6 +49,13 @@ router.post('/', async (req,res)=>{
             res.send(doc)
             
         })
+    
+} catch (error) {
+    
+    res.send({message:error})
+    console.log(error)
+}
+   
    
 })
 module.exports = router
