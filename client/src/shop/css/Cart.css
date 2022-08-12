@@ -1,0 +1,41 @@
+.cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+    
+}
+.cart-list{
+    
+padding:0}
+.cart-total{
+    border: 1px solid rgb(185, 185, 185);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    height: fit-content;
+    width: 200px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+}
+.subtotal{
+    display: flex;
+    justify-content: space-between;
+}
+.taxes{
+    display: flex;
+    justify-content: space-between;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+}
+.total-number{
+    font-weight: 100;
+
+}
+#checkout-btn{
+    width: 100%;
+    background-color: rgb(155, 155, 155);
+    color: aliceblue;
+    font-weight: 600;
+}

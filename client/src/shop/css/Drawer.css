@@ -1,0 +1,47 @@
+.drawer{
+    background-color: rgb(18, 21, 22);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left:-300px;
+    transition: left .25s linear;
+
+  
+}
+.drawer-option{
+    color: grey;
+   
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divider{
+    width: 220px;
+    height:1px;
+    background-color: rgba(128, 128, 128, 0.507);
+}
+#top-div{
+    width: 270px;
+    height:3px;
+    background-color: rgba(255, 255, 255, 0.507);
+}
+.drawer-header{
+color:white;
+font-weight: 300;
+}
+.tab{
+    background-color:rgb(18, 21, 22);
+    height: 50px;
+    width: 340px;
+}
+.drawer:hover{
+    left:0
+   
+}
+.drawer-option:hover{
+    color:white
+}

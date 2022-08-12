@@ -1,0 +1,35 @@
+#shop-btn{
+    color: white;
+    margin:0;
+     background-color: rgb(18, 21, 22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     width:101vw;
+     height: 40px;;
+  }
+  .preview{
+      display: flex;
+      justify-content: space-evenly;
+      margin-top:100px;
+  }
+  .landing-img{
+    object-fit: contain;
+    width: 30%;
+  
+  
+  }
+  .landing-image-container{
+    display: flex;
+    justify-content: center;
+    height: 400px;
+  }
+  .landing-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width:40%;
+  
+  
+  }

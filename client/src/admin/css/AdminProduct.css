@@ -1,0 +1,26 @@
+.admin-product{
+    display: flex;
+    width: 800px;
+
+
+}
+
+h3,h5,p{
+    margin:0
+}
+#admin-product-title{
+
+    width: 20%;
+}
+#admin-product-stock{
+
+    width: 20%;
+}
+#admin-product-description{
+
+    width: 30%;
+}
+#admin-product-price{
+
+    width: 20%;
+}
