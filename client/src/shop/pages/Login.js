@@ -1,7 +1,8 @@
 import { Button, Input } from '@mui/material';
 import axios from 'axios';
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import NavBar from '../components/NavBar';
 
 function Login() {
     var navigate = useNavigate()
@@ -27,17 +28,21 @@ function Login() {
         }
     }
   return (
-  <div className="login">
-    <div className="form">
+  <div style = {{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', width:"100vw", height:'100vh'}} className="login">
+    <NavBar style = {{}}/>
+    <div style={{height:'fit-content', padding:'20px'}} className="form">
+        <h1 style={{margin:0}}>Login</h1>
         <div className="input-field">
             <Input disableUnderline={true} id = 'input' onChange = {(e)=>handleCredentialsChange(e)} placeholder='email'></Input>
         </div>
         <div className="input-field">
-            <Input disableUnderline={true} id = 'input' onChange = {(e)=>handleCredentialsChange(e)} placeholder='password'></Input>
+            <Input disableUnderline={true} type='password' id = 'input' onChange = {(e)=>handleCredentialsChange(e)} placeholder='password'></Input>
         </div>
         <div className="login-btns">
-            <Button onClick={handleLoginClick}>Login</Button>
+            <Button style={{backgroundColor:'rgb(64, 94, 114)', color:'white'}} onClick={handleLoginClick}>Login</Button>
+
         </div>
+        <p>Don't have an account? <NavLink style={{color:'white'}} to = '/register'>Register.</NavLink></p>
     </div>
   </div>
   )

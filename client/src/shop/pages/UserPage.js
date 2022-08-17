@@ -1,20 +1,27 @@
 import { Button } from '@mui/material'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import NavBar from '../components/NavBar'
 import '../css/UserPage.css'
 function UserPage() {
+    const navigate = useNavigate()
     const [user, setUser] = useState({})
     const [orders, setOrders] = useState([])
 useEffect(() => {
      setUser(JSON.parse(window.sessionStorage.getItem('session')))
 async function getUserOrders(){
-    await axios.get(`http://localhost:5000/orders/${JSON.parse(window.sessionStorage.getItem('session'))._id}`).then(res=>{setOrders(res.data)})
+    await axios.get(`http://localhost:5000/orders/${JSON.parse(window.sessionStorage.getItem('session'))._id}`).then(res=>{setOrders(res.data.reverse())})
 }
 getUserOrders()
 }, [])
-console.log(orders)
+function handleLogoutClick(){
+    window.sessionStorage.setItem('session',null)
+    navigate('/')
+}
   return (
  <div className="user-page">
+<NavBar/>
     <div className="account">
         <div className="account-top">
             <h1>
@@ -34,7 +41,7 @@ console.log(orders)
                 <h5>Name: </h5>
                 <p>{user.firstName + " " +user.lastName}</p>
             </div>
-            <Button id = "logout-btn">Logout</Button>
+            <Button onClick={handleLogoutClick} id = "logout-btn">Logout</Button>
             
         </div>
     </div>

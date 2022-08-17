@@ -1,6 +1,7 @@
 import { Button, Input } from '@mui/material'
 import axios from 'axios'
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom';
 import '../css/Register.css'
 function Register() {
     const [user, setUser] = useState({email:"", password:"", firstName:"", lastName:""});
@@ -34,6 +35,7 @@ function Register() {
 
 
 <div className="form">
+    <h1>Register</h1>
     <div className="input-field">
         <Input  onChange={(e)=>handleUserChange(e)} id="input" disableUnderline={true} placeholder='First Name'></Input>
     </div>
@@ -48,8 +50,9 @@ function Register() {
     </div>
 
 <div className="form-btns">
-    <Button onClick = {handleRegisterClick}>Register</Button>
+    <Button style ={{backgroundColor:'rgb(64, 94, 114)', color:'white'}} onClick = {handleRegisterClick}>Register</Button>
 </div>
+<p>Already have an account? <NavLink style={{ color:'white'}} to ="/login"> Login.</NavLink></p>
 </div>
 
 </div>

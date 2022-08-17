@@ -1,8 +1,17 @@
+.orders{
+    height:'fit-content';
+
+ margin:0;
+}
+
+
 #order{
     background-color: rgb(64, 94, 114);
     margin: 20px;
     display: flex;
     flex-direction: column;
+    border-radius:20px;
+    height: fit-content;
     
 }
 #order-item{
@@ -12,49 +21,74 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    
+    border-radius:20px;
    
 }
 #order-item-field{
     margin: 5px;;
 }
 .order-list{
-    background-color: rgb(183, 187, 190);
+    background-color: rgb(194, 194, 194);
     height: 500px;
-   
+   display: flex;
+   flex-direction: column;
     overflow-y: scroll;
+    width: 50vw;
+    border:1px solid rgba(128, 128, 128, 0.301) ;
+    
 }
 .account{
 display: flex;flex-direction: column;
 align-items: center;
+
 }
 .account-top{
   
 }
 .account-body{
+    border-radius:20px;
    display: flex;
    flex-direction: column;
    justify-content:center ;
    align-items: center;
-   background-color: rgb(90, 92, 92);
+   background-color: rgb(202, 199, 199);
    width: 30vw;
    padding:20px;
+   border:1px solid rgba(121, 120, 120, 0.247);
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 .account-body-field{
     background-color: white;
-    width: 100%;
+   
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin: 10px;
 }
 .account-body-field>h5{
-    background-color: grey;
+    background-color: rgb(64, 94, 114);
+    color:white;
+    font-weight: 400;
+    border:1px solid rgba(0, 0, 0, 0.205);
     width: 100%;
+    padding:2px
+}
+.account-body-field>p{
+    background-color: aliceblue;
+    text-align: center;
+    width: 100%;
+    border:1px solid rgba(0, 0, 0, 0.356);
+    padding:2px;
 }
 .user-page{
     background-color: rgb(183, 187, 190);
     height: 100vh;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 #logout-btn{
     background-color: rgb(64, 94, 114);

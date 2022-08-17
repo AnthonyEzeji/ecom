@@ -15,13 +15,15 @@ const [total, setTotal] = useState(cartState?.total*5.09/100+cartState?.total);
 
 useEffect(() => {
   setSubTotal(cartState.total)
- setTotal(cartState?.total*5.09/100+cartState?.total)
+ setTotal(cartState.total)
 }, [cartState])
 
     const {cartItems} = useSelector(state=>state.cart)
 
     const handleCheckout = async () => {
       if(!window.sessionStorage.hasOwnProperty('session')){
+        return alert('Please login to checkout cart! Thanks!')
+      }else if (JSON.parse(window.sessionStorage.getItem('session')) === null){
         return alert('Please login to checkout cart! Thanks!')
       }
       const stripe = await getStripe();
@@ -45,7 +47,7 @@ useEffect(() => {
         </ul>
         <div className="cart-total">
           <div className="subtotal"> <h3>Subtotal:</h3><p>{subTotal}</p>  </div>
-          <div className="taxes"> <h3>Taxes:</h3><p>{cartState?.total*5.09/100}</p>  </div>
+         
           <div className="total"> <h1>Total:</h1><h1 className= 'total-number'>{total}</h1>  </div>
           <Button onClick={()=>{handleCheckout()}} id="checkout-btn">Checkout</Button>
         </div>

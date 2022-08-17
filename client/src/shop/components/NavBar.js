@@ -12,8 +12,7 @@ function NavBar() {
 const {amount} = useSelector((state)=>state.cart)
 let navigate = useNavigate()
 useEffect(() => {
-  if(window.sessionStorage.hasOwnProperty('session')){
-    console.log('bvoop')
+  if(window.sessionStorage.hasOwnProperty('session')&&JSON.parse(window.sessionStorage.getItem('session'))!==null){
     setLoggedIn(true)
   }
 
@@ -24,7 +23,7 @@ useEffect(() => {
     <div className="navbar">
       <HomeIcon onClick={()=>navigate('/')} style ={{color:'grey', position:'absolute', left:'20px'}}/>
        {!loggedIn?<Button onClick={()=>navigate('/login')} style={{fontWeight:'400',borderRadius:0,color:"grey",height:"100%",borderLeft:'1px solid grey'}}> Login</Button>:<Button onClick={()=>navigate(`/user/${JSON.parse(window.sessionStorage.getItem('session'))._id}`)} style={{fontWeight:'400',borderRadius:0,color:"grey",height:"100%",borderLeft:'1px solid grey'}}> {JSON.parse(window.sessionStorage.getItem('session')).firstName}</Button>}
-       <div  style={{display:'flex', alignItems:'center', justofyContent:'center',width:50,borderRadius:0,color:"grey",height:"100%",borderLeft:'1px solid grey'}}> <NavLink to='/cart'><ShoppingCartSharpIcon style={{position:'absolute',right:'15px',top:'15px' ,color:"grey", fontSize:25}}></ShoppingCartSharpIcon><h5 id='cart-amount'>{amount}</h5></NavLink></div>
+       <div  style={{display:'flex', alignItems:'center', justofyContent:'center',width:75,borderRadius:0,color:"grey",height:"100%",width:50,borderLeft:'1px solid grey'}}> <NavLink to='/cart'><ShoppingCartSharpIcon style={{position:'absolute',right:'15px',top:'15px' ,color:"grey", fontSize:25}}></ShoppingCartSharpIcon><h5 id='cart-amount'>{amount}</h5></NavLink></div>
     </div>
   )
 }

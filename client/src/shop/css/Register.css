@@ -1,7 +1,7 @@
 .form{
     background-color: rgb(106, 107, 110);
     width:30vw;
-    height: 400px;
+    height: 500px;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -10,7 +10,7 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .input-field{
-    background-color: rgb(212, 165, 10);
+    background-color: rgb(64, 94, 114);
     width: 20vw;
     margin: 20px;
     font-weight:600;
