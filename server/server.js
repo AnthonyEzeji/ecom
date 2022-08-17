@@ -13,6 +13,12 @@ const productRoutes = require('./products/productRoutes')
 mongoose.connect(process.env.DB,{useNewUrlParser: true,useUnifiedTopology: true }, ()=>console.log('successfully connected to db...'))
 
 var app = express()
+const myLogger = function (req, res, next) {
+    console.log(req)
+    next()
+  }
+  
+app.use(myLogger)
 app.use('/webhook', express.raw({type: "*/*"}));
 app.use(cors(), express.json())
 app.use('/products', productRoutes)
