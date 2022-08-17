@@ -4,15 +4,16 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 const endpointSecret = "whsec_dcfccbaff4c7e2558c68fec59f922553498c3cbe77ce56a801baee8f0942d43a";
 const orderModel = require('./orders/orderModel')
 router.post('/', express.raw({type: 'application/json'}), (request, response) => {
- 
+
   const sig = request.headers['stripe-signature'];
 
   let event;
 
   try {
     event = stripe.webhooks.constructEvent(request.body, sig, endpointSecret);
-    
+    console.log(event)
   } catch (err) {
+    console.log(err + "<--------this is an error")
     response.status(400).send(`Webhook Error: ${err.message}`);
   
     return;
