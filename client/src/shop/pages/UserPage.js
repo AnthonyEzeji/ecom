@@ -11,7 +11,7 @@ function UserPage() {
 useEffect(() => {
      setUser(JSON.parse(window.sessionStorage.getItem('session')))
 async function getUserOrders(){
-    await axios.get(`http://localhost:5000/orders/${JSON.parse(window.sessionStorage.getItem('session'))._id}`).then(res=>{setOrders(res.data.reverse())})
+    await axios.get(`http://3.92.186.223:5000/orders/${JSON.parse(window.sessionStorage.getItem('session'))._id}`).then(res=>{setOrders(res.data.reverse())})
 }
 getUserOrders()
 }, [])

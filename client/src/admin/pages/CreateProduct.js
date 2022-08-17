@@ -34,7 +34,7 @@ function CreateProduct() {
           }
     }
     async function  handleCreateProductClick(){
-        await axios.post('http://localhost:5000/products', product)
+        await axios.post('http://3.92.186.223:5000/products', product)
     }
   return (
    

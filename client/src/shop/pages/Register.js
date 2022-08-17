@@ -7,7 +7,7 @@ function Register() {
     const [user, setUser] = useState({email:"", password:"", firstName:"", lastName:""});
 
     async function handleRegisterClick(){
-        await axios.post('http://localhost:5000/user/register',user)
+        await axios.post('http://3.92.186.223:5000/user/register',user)
     }
 
     function handleUserChange(e){
