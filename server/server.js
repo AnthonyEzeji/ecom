@@ -14,7 +14,7 @@ mongoose.connect(process.env.DB,{useNewUrlParser: true,useUnifiedTopology: true 
 
 var app = express()
 
-app.use('/webhook', express.raw({type: "*/*"}));
+
 app.use(cors(), express.json())
 app.use('/products', productRoutes)
 app.use('/api/stripe', StripeRoute)
