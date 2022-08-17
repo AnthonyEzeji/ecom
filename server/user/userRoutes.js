@@ -38,9 +38,14 @@ router.post('/login',async(req,res)=>{
 
 })
 router.get('/:_id', async (req,res)=>{
-await userModel.findById(req.params._id).then(doc=>{
-    res.status(200).send(doc)
-})
+    try {
+        await userModel.findById(req.params._id).then(doc=>{
+            res.status(200).send(doc)
+        })
+    } catch (error) {
+        
+    }
+
 })
 
 module.exports = router
