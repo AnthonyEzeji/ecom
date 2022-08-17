@@ -10,7 +10,7 @@ router.post('/', express.raw({type: 'application/json'}), (request, response) =>
   let event;
 
   try {
-    event = stripe.webhooks.constructEvent(request.body, sig, endpointSecret);
+    event = stripe.webhooks.constructEvent(request.rawBody, sig, endpointSecret);
     console.log(event)
   } catch (err) {
     console.log(err + "<--------this is an error")
