@@ -5,7 +5,7 @@ const endpointSecret = "whsec_dcfccbaff4c7e2558c68fec59f922553498c3cbe77ce56a801
 const orderModel = require('./orders/orderModel')
 router.post('/', (request, response) => {
 //express.raw({type: 'application/json'})
-console.log(request.body)
+console.log(request.body + "<<< body <<<<<")
   const sig = request.headers['stripe-signature'];
   
   let event;
