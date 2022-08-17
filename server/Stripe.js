@@ -3,18 +3,21 @@ const express = require('express')
 const router = express.Router()
 
 router.post('/',async (req,res)=>{
+  const metadata = {email:req.body.session.email,cartItems:JSON.stringify(req.body.cartItems.map(item=>{return {title:item.title, quantity:item.quantity, price:item.price,_id:item._id}}))}
+
+  
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
   try {
     const params = {
       submit_type: 'pay',
       mode: 'payment',
-      payment_method_types: ['card'],
-     
-    
-      line_items: req.body.map((item) => {
+     customer_email:req.body.session.email,
+     metadata:metadata,
+      line_items: req.body.cartItems.map((item) => {
        
         return {
+          
           price_data: { 
             currency: 'usd',
             product_data: { 
@@ -38,6 +41,7 @@ router.post('/',async (req,res)=>{
 
     res.status(200).json(session);
   } catch (err) {
+    console.log(err)
     res.status(err.statusCode || 500).json(err.message);
   }
 })

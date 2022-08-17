@@ -1,10 +1,11 @@
+import { Grid } from '@mui/material'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import Drawer from '../components/Drawer'
 import NavBar from '../components/NavBar'
 import Product from '../components/Product'
-
+import '../css/ProductPage.css'
 function ProductPage() {
     const [brand, setBrand] = useState('')
     const [products, setProducts] = useState([])
@@ -26,11 +27,12 @@ function ProductPage() {
     
     
   return (
-    <div>
+    <div className = 'product-page'>
         <NavBar/>
-        <Drawer/>
+        <Drawer style= {{top:'50px', backgroundColor:'white'}}/>
+        <Grid id = 'products' container >
         {products.filter((product)=>{
-        console.log(brand)
+        
         if(brand==null){
             return true
         }else{
@@ -39,8 +41,14 @@ function ProductPage() {
         }
         
     }).map(product=>{
-        return(<Product product={product}/>)
-    })}</div>
+        return(
+        <Grid item xs = {12} sm = {6} md = {2}>
+            <Product product={product}/>
+        </Grid>
+        )
+    })}
+        </Grid>
+    </div>
   )
 }
 

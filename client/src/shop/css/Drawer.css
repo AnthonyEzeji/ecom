@@ -8,6 +8,7 @@
     position: absolute;
     left:-300px;
     transition: left .25s linear;
+    top:50px
 
   
 }

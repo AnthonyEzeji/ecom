@@ -7,6 +7,9 @@ import Cart from './shop/pages/Cart';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Dashboard from './admin/pages/Dashboard'
 import ProductPage from './shop/pages/ProductPage';
+import Register from './shop/pages/Register'
+import Login from './shop/pages/Login';
+import UserPage from './shop/pages/UserPage';
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +21,9 @@ function App() {
         <Route path="/admin/create-product" element={<CreateProduct/>}/>
         <Route path="/products/:brand" element={<ProductPage />}/>
         <Route path="/products" element={<ProductPage />}/>
+        <Route path="/register" element={<Register />}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/user/:_id" element={<UserPage />}/>
       </Routes>
     </div>
     </BrowserRouter>

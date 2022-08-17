@@ -21,8 +21,11 @@ useEffect(() => {
     const {cartItems} = useSelector(state=>state.cart)
 
     const handleCheckout = async () => {
+      if(!window.sessionStorage.hasOwnProperty('session')){
+        return alert('Please login to checkout cart! Thanks!')
+      }
       const stripe = await getStripe();
-  const response = await axios.post('http://localhost:5000/api/stripe',cartItems)
+  const response = await axios.post('http://localhost:5000/api/stripe',{cartItems, session:JSON.parse(window.sessionStorage.getItem('session'))})
  console.log(response)
   if(response.status === 500) return;
     

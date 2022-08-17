@@ -42,14 +42,14 @@ function Landing() {
     useEffect(() => {
       async function getProducts(){
         await axios.get('http://localhost:5000/products').then(res=>{
-            setProducts(res.data.slice(0,5))
+            setProducts(res.data)
         })
       }getProducts()
     }, [])
 //
     useEffect(() => {
       setPreviewProducts(products?.slice(index, index+previewSize))
-      console.log(products?.slice(index, index+previewSize))
+ 
     }, [products,previewSize,index])
 
     var x = window.matchMedia("(max-width: 1250px)")
@@ -91,7 +91,7 @@ function Landing() {
     <Button onClick={()=>{changeIndex(-1)}}><ArrowCircleLeftIcon style = {{color:'black'}}/></Button>
     {previewProducts?.map((product,index)=>{
    
-   return(<Product product={product}/>)
+   return(<Product key={index} product={product}/>)
    })}
      <Button onClick={()=>{changeIndex(1)}}><ArrowCircleRightIcon style = {{color:'black'}}/></Button>
     </div>

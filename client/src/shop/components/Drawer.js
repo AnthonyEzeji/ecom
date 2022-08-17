@@ -23,8 +23,8 @@ function Drawer() {
         <div className="divider">
 
 </div>
-        <div  className="drawer-option">
-            Windows
+        <div onClick={()=>navigate('/products/microsoft')}  className="drawer-option">
+            Microsoft
         </div>
         <div className="divider">
 

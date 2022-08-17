@@ -5,7 +5,10 @@ import AddShoppingCartSharpIcon from '@mui/icons-material/AddShoppingCartSharp';
 import { Button } from '@mui/material';
 import {addItem} from '../redux/CartSlice'
 import {useDispatch} from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Product(props) {
+  const notify = () => toast(`${props.product.title} added to cart!`);
     const [rating, setRating] = useState([{index:null}])
     useEffect(() => {
       function getRating(){
@@ -25,6 +28,7 @@ var dispatch = useDispatch()
 
   return (
     <div className="product">
+      <ToastContainer />
         <img src={props.product.image}></img>
         <div className="product-info">
 <h3>{props.product.title}</h3>
@@ -39,7 +43,7 @@ var dispatch = useDispatch()
 <p id='product-price'>${props.product.price}</p>
 
         </div>
-        <Button onClick={()=>dispatch(addItem(props.product))} style={{ width:"100%", marginTop:50}} id ='add-btn'><AddShoppingCartSharpIcon id='add-icon' /></Button>
+        <Button onClick={()=>dispatch(addItem(props.product),notify())} style={{ width:"100%", marginTop:50}} id ='add-btn'><AddShoppingCartSharpIcon id='add-icon' /></Button>
     </div>
   )
 }
