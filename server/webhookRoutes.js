@@ -14,7 +14,7 @@ router.post('/', express.raw({type: 'application/json'}), (request, response) =>
     
   } catch (err) {
     response.status(400).send(`Webhook Error: ${err.message}`);
-    console.log(err)
+  
     return;
   }
 async function createOrder(order) {
