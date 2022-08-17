@@ -6,7 +6,7 @@ const orderModel = require('./orders/orderModel')
 router.post('/', express.raw({type: 'application/json'}), (request, response) => {
 
   const sig = request.headers['stripe-signature'];
-
+  console.log(sig)
   let event;
 
   try {
@@ -21,7 +21,7 @@ router.post('/', express.raw({type: 'application/json'}), (request, response) =>
 async function createOrder(order) {
     const newOrder = await orderModel.create(order)
  
-console.log(newOrder)
+
 }
   // Handle the event
   switch (event.type) {
