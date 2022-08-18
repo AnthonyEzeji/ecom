@@ -21,7 +21,7 @@ function Login() {
         }
     }
     async function handleLoginClick(){
-        const req = await axios.post("http://localhost:5000/user/login", credentials)
+        const req = await axios.post("http://44.208.28.123:5000/user/login", credentials)
         if(req.status == 200){
             window.sessionStorage.setItem('session', JSON.stringify(req.data))
             navigate('/')
