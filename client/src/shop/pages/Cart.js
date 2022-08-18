@@ -45,12 +45,13 @@ useEffect(() => {
     return (<CartItem item={item}/>)
     })}
         </ul>
-        <div className="cart-total">
+        {cartState.cartItems.length>0?<div className="cart-total">
           <div className="subtotal"> <h3>Subtotal:</h3><p>{subTotal}</p>  </div>
          
           <div className="total"> <h1>Total:</h1><h1 className= 'total-number'>{total}</h1>  </div>
           <Button onClick={()=>{handleCheckout()}} id="checkout-btn">Checkout</Button>
-        </div>
+        </div>:<h5>It looks like your cart is empty!</h5>}
+        
         </div>
   )
 }

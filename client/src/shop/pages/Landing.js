@@ -87,6 +87,7 @@ function Landing() {
    </div>
     
     <div id= "shop-btn"><p>IN STOCK AND ON SALE! SHOP DISCOUNTED PRODUCTS AND GET THEM DELIVERED ASAP </p></div>
+    <div className="landing-bottom">
     <div className="preview">
     <Button onClick={()=>{changeIndex(-1)}}><ArrowCircleLeftIcon style = {{color:'black'}}/></Button>
     {previewProducts?.map((product,index)=>{
@@ -95,6 +96,8 @@ function Landing() {
    })}
      <Button onClick={()=>{changeIndex(1)}}><ArrowCircleRightIcon style = {{color:'black'}}/></Button>
     </div>
+    </div>
+   
 
  </div>
   )

@@ -11,7 +11,7 @@
   .preview{
       display: flex;
       justify-content: space-evenly;
-      margin-top:100px;
+      
   }
   .landing-img{
     object-fit: contain;
@@ -32,4 +32,9 @@
     width:40%;
   
   
+  }
+  .landing-bottom{
+    background-color: rgb(183, 187, 190);
+    height: 384px;
+    padding-top: 60px;
   }

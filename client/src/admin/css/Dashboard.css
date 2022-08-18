@@ -159,7 +159,7 @@ width: 99.9%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-  background-color: rgb(195, 197, 197);
+  background-color: rgb(163, 170, 170);
     align-items: center;
 }
 .dashboard-top{

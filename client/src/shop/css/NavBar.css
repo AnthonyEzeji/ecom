@@ -3,10 +3,10 @@
     height: 50px;
     justify-content: flex-end;
 width: 100vw;
-background-color: rgb(18, 21, 22);
+background-color: rgb(0, 0, 0);
     padding-right:10px;
     align-items: center;
-
+color: rgb(66, 126, 126);
 }
 #cart-amount{
     font-weight: 100;
@@ -14,8 +14,13 @@ background-color: rgb(18, 21, 22);
     color: aliceblue;
    position:absolute;
    top:5px;
-    right: 5px;
+    right: 9px;
     border-radius:100px;
     height: 18px;
-    width: 18px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+}
+#my-account{
+    color:rgb(177, 176, 176)
 }

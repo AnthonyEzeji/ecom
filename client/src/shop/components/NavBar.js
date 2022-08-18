@@ -21,8 +21,8 @@ useEffect(() => {
 
   return (
     <div className="navbar">
-      <HomeIcon onClick={()=>navigate('/')} style ={{color:'grey', position:'absolute', left:'20px'}}/>
-       {!loggedIn?<Button onClick={()=>navigate('/login')} style={{fontWeight:'400',borderRadius:0,color:"grey",height:"100%",borderLeft:'1px solid grey'}}> Login</Button>:<Button onClick={()=>navigate(`/user/${JSON.parse(window.sessionStorage.getItem('session'))._id}`)} style={{fontWeight:'400',borderRadius:0,color:"grey",height:"100%",borderLeft:'1px solid grey'}}> {JSON.parse(window.sessionStorage.getItem('session')).firstName}</Button>}
+      <HomeIcon id= 'home-icon' onClick={()=>navigate('/')} style ={{color:'grey', position:'absolute', left:'20px'}}/>
+       {!loggedIn?<Button id= 'login-btn' onClick={()=>navigate('/login')} style={{fontWeight:'400',borderRadius:0,color:"grey",height:"100%",borderLeft:'1px solid grey'}}> Login</Button>:<Button id= 'my-account' onClick={()=>navigate(`/user/${JSON.parse(window.sessionStorage.getItem('session'))._id}`)} style={{fontWeight:'400',borderRadius:0,height:"100%",borderLeft:'1px solid grey'}}> {JSON.parse(window.sessionStorage.getItem('session')).firstName}</Button>}
        <div  style={{display:'flex', alignItems:'center', justofyContent:'center',width:75,borderRadius:0,color:"grey",height:"100%",width:50,borderLeft:'1px solid grey'}}> <NavLink to='/cart'><ShoppingCartSharpIcon style={{position:'absolute',right:'15px',top:'15px' ,color:"grey", fontSize:25}}></ShoppingCartSharpIcon><h5 id='cart-amount'>{amount}</h5></NavLink></div>
     </div>
   )

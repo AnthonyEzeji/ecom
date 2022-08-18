@@ -9,7 +9,12 @@
 }
 .product-page{
     display: flex;
+    min-height:100vh;
     flex-direction: column;
-  
+    background-color: rgb(183, 187, 190);
     align-items: center;
+    height: fit-content;
+}
+.product-page>h1{
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
 }
