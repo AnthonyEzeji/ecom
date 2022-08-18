@@ -2,6 +2,7 @@ import { Button, Input } from '@mui/material'
 import axios from 'axios'
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import Drawer from '../components/Drawer';
 import NavBar from '../components/NavBar';
 import '../css/Register.css'
 function Register() {
@@ -35,6 +36,7 @@ function Register() {
 <div className="register">
 
 <NavBar/>
+<Drawer/>
 <div className="form">
     
     <h1>Register</h1>

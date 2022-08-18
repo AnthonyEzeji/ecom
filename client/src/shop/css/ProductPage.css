@@ -14,8 +14,15 @@
    
     flex-direction: column;
     background-color: rgb(183, 187, 190);
+    
     align-items: center;
     height: fit-content;
+}
+@media screen and (max-width:599px) {
+    #products{
+        width: fit-content;
+        margin-left:25vw;
+    }
 }
 .product-page>h1{
     font-family: 'Alumni Sans Pinstripe', sans-serif;

@@ -28,7 +28,19 @@ var dispatch = useDispatch()
 
   return (
     <div className="product">
-      <ToastContainer />
+      <ToastContainer 
+      
+      position="top-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme='dark'
+      />
         <img src={props.product.image}></img>
         <div className="product-info">
 <h3>{props.product.title}</h3>
@@ -40,7 +52,7 @@ var dispatch = useDispatch()
 </div>
 
 
-<p id='product-price'>${props.product.price}</p>
+<p id='product-price'>${props.product.price.toFixed(2)}</p>
 
         </div>
         <Button onClick={()=>dispatch(addItem(props.product),notify())} style={{ width:"100%", marginTop:50}} id ='add-btn'><AddShoppingCartSharpIcon id='add-icon' /></Button>

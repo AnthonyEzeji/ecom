@@ -6,6 +6,7 @@ import CartItem from '../components/CartItem'
 import NavBar from '../components/NavBar'
 import axios from 'axios'
 import '../css/Cart.css'
+import Drawer from '../components/Drawer'
 
 function Cart() {
 
@@ -40,6 +41,7 @@ useEffect(() => {
   return (
     <div className = 'cart'>
         <NavBar/>
+        <Drawer/>
         <ul className='cart-list'>
         {cartItems.map(item=>{
     return (<CartItem item={item}/>)

@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/Drawer.css'
 import {useNavigate} from 'react-router-dom'
+import StorefrontIcon from '@mui/icons-material/Storefront';
 function Drawer() {
     var navigate = useNavigate()
   return (
@@ -30,11 +31,12 @@ function Drawer() {
 
 </div>
 <div className="tab">
+    <StorefrontIcon style={{fontSize:20,width:20, color:'rgb(189, 183, 183)'}}/>
+   <p>S</p>
    <p>H</p>
    <p>O</p>
-   <p>V</p>
-   <p>E</p>
-   <p>R</p>
+   <p>P</p>
+
  
 </div>
 

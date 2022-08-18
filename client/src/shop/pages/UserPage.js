@@ -7,6 +7,7 @@ import '../css/UserPage.css'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import Product from '../components/Product'
+import Drawer from '../components/Drawer'
 function UserPage() {
     const navigate = useNavigate()
     const [user, setUser] = useState({})
@@ -65,9 +66,14 @@ else{
 }
 
 useEffect(() => {
-if(window.innerWidth<=1250){
-setPreviewSize(3)
-}
+    if(window.innerWidth<=550){
+        setPreviewSize(1)
+        }else
+      if(window.innerWidth<=800){
+      setPreviewSize(2)
+      }else if (window.innerWidth<=1250){
+        setPreviewSize(3)
+      }
 }, [])
 
 
@@ -98,6 +104,7 @@ function handleLogoutClick(){
   return (
  <div className="user-page">
 <NavBar/>
+<Drawer/>
 <div className="user-page-top">
 <div className="account">
         <div className="account-top">
@@ -151,12 +158,12 @@ function handleLogoutClick(){
 </div>
 <div id= "shop-btn"><p>IN STOCK AND ON SALE! SHOP DISCOUNTED PRODUCTS AND GET THEM DELIVERED ASAP </p></div>
 <div  className="preview">
-    <Button style={{backgroundColor:'black', borderTopLeftRadius:"50px",borderBottomLeftRadius:"50px"}} onClick={()=>{changeIndex(-1)}}><ArrowCircleLeftIcon style = {{color:'white'}}/></Button>
+    <Button style={{ borderTopLeftRadius:"50px",borderBottomLeftRadius:"50px"}} onClick={()=>{changeIndex(-1)}}><ArrowCircleLeftIcon style = {{color:'Black'}}/></Button>
     {previewProducts?.map((product,index)=>{
    
    return(<Product style={{margin:10}} key={index} product={product}/>)
    })}
-     <Button style={{backgroundColor:'black', borderTopRightRadius:"50px",borderBottomRightRadius:"50px"}} onClick={()=>{changeIndex(1)}}><ArrowCircleRightIcon style = {{color:'white'}}/></Button>
+     <Button style={{padding:0,width:20, height:100, }} onClick={()=>{changeIndex(1)}}><ArrowCircleRightIcon style = {{margin:0,color:'Black'}}/></Button>
     </div>
  </div>
   )

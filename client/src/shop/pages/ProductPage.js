@@ -69,7 +69,7 @@ navigate(`/products${e.target.id}`)
         
     }).map(product=>{
         return(
-        <Grid item xs = {12} sm = {6} md = {3} lg={2}>
+        <Grid item xs = {12} sm = {6} md = {4} lg={3}>
             <Product product={product}/>
         </Grid>
         )

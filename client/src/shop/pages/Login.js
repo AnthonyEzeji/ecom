@@ -2,6 +2,7 @@ import { Button, Input } from '@mui/material';
 import axios from 'axios';
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
+import Drawer from '../components/Drawer';
 import NavBar from '../components/NavBar';
 import '../css/Login.css'
 function Login() {
@@ -30,8 +31,10 @@ function Login() {
   return (
   <div style = {{}} className="login">
     <NavBar style = {{}}/>
+
+    <Drawer/>
     <div style={{height:'fit-content', padding:'20px'}} className="login-form">
-        <h1 style={{margin:0}}>Login</h1>
+        <h1 style={{   fontFamily: 'Alumni Sans Pinstripe',margin:0}}>Login</h1>
         <div className="input-field">
             <Input disableUnderline={true} id = 'input' onChange = {(e)=>handleCredentialsChange(e)} placeholder='email'></Input>
         </div>
@@ -39,7 +42,7 @@ function Login() {
             <Input disableUnderline={true} type='password' id = 'input' onChange = {(e)=>handleCredentialsChange(e)} placeholder='password'></Input>
         </div>
         <div className="login-btns">
-            <Button style={{backgroundColor:'rgb(64, 94, 114)', color:'white'}} onClick={handleLoginClick}>Login</Button>
+            <Button style={{backgroundColor:'rgb(149, 129, 204)', color:'black'}} onClick={handleLoginClick}>Login</Button>
 
         </div>
         <p>Don't have an account? <NavLink style={{color:'white'}} to = '/register'>Register.</NavLink></p>

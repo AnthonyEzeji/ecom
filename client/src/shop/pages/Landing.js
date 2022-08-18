@@ -32,8 +32,13 @@ function Landing() {
    }
    
    useEffect(() => {
-    if(window.innerWidth<=1250){
-    setPreviewSize(3)
+    if(window.innerWidth<=550){
+      setPreviewSize(1)
+      }else
+    if(window.innerWidth<=800){
+    setPreviewSize(2)
+    }else if (window.innerWidth<=1250){
+      setPreviewSize(3)
     }
    }, [])
    
@@ -58,7 +63,8 @@ function Landing() {
     x.addListener(()=>{setPreviewSize(5)}) // Attach listener function on state changes
     var x = window.matchMedia("(max-width: 800px)")
     x.addListener(()=>{setPreviewSize(2)}) // Attach listener function on state changes
-
+    var x = window.matchMedia("(max-width: 550px)")
+    x.addListener(()=>{setPreviewSize(1)}) // Attach listener function on state changes
   return (
  <div className="landing">
     
@@ -70,11 +76,11 @@ function Landing() {
         
         Only Apple gets you <h4 style={{color:'rgb(1220, 40, 176)'}}>supercharged</h4>  for college.
       </h1>
-      <div style={{width:350}}>
-      <h2 style={{width:'fit-content',fontWeight:400,marginBottom:0,textAlign:'left',color:'rgb(44, 42, 45)',fontSize:'1vw'}}>
+      <div >
+      <h2 style={{width:'fit-content',fontWeight:400,marginBottom:0,textAlign:'left',color:'rgb(44, 42, 45)',fontSize:'1.5vw'}}>
     Save on Mac or iPad with an education discount. Get 20% off AppleCare+.
     </h2>
-    <h2 style={{width:'fit-content',marginTop:0,textAlign:'left',color:'rgb(220, 40, 176)',fontSize:'1vw', }}>
+    <h2 style={{width:'fit-content',marginTop:0,textAlign:'left',color:'rgb(220, 40, 176)',fontSize:'1.5vw', }}>
     And a gift card up to $150.
     </h2>
       </div>
@@ -89,12 +95,12 @@ function Landing() {
     <div id= "shop-btn"><p>IN STOCK AND ON SALE! SHOP DISCOUNTED PRODUCTS AND GET THEM DELIVERED ASAP </p></div>
     <div className="landing-bottom">
     <div className="preview">
-    <Button onClick={()=>{changeIndex(-1)}}><ArrowCircleLeftIcon style = {{color:'black'}}/></Button>
+    <Button style={{height:'fit-content'}} onClick={()=>{changeIndex(-1)}}><ArrowCircleLeftIcon style = {{color:'black'}}/></Button>
     {previewProducts?.map((product,index)=>{
    
    return(<Product key={index} product={product}/>)
    })}
-     <Button onClick={()=>{changeIndex(1)}}><ArrowCircleRightIcon style = {{color:'black'}}/></Button>
+     <Button style={{height:'fit-content'}} onClick={()=>{changeIndex(1)}}><ArrowCircleRightIcon style = {{color:'black'}}/></Button>
     </div>
     </div>
    
