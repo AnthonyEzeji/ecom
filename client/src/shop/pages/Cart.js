@@ -27,7 +27,7 @@ useEffect(() => {
         return alert('Please login to checkout cart! Thanks!')
       }
       const stripe = await getStripe();
-  const response = await axios.post('http://44.208.28.123:5000/api/stripe',{cartItems, session:JSON.parse(window.sessionStorage.getItem('session'))})
+  const response = await axios.post('http://localhost:5000/api/stripe',{cartItems, session:JSON.parse(window.sessionStorage.getItem('session'))})
  console.log(response)
   if(response.status === 500) return;
     

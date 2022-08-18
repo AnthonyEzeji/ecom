@@ -8,13 +8,39 @@ function UserPage() {
     const navigate = useNavigate()
     const [user, setUser] = useState({})
     const [orders, setOrders] = useState([])
+    const [products, setProducts] = useState(new Map())
 useEffect(() => {
      setUser(JSON.parse(window.sessionStorage.getItem('session')))
 async function getUserOrders(){
-    await axios.get(`http://44.208.28.123:5000/orders/${JSON.parse(window.sessionStorage.getItem('session'))._id}`).then(res=>{setOrders(res.data.reverse())})
+    await axios.get(`http://localhost:5000/orders/${JSON.parse(window.sessionStorage.getItem('session'))._id}`).then(res=>{setOrders(res.data.reverse())})
 }
 getUserOrders()
 }, [])
+useEffect(() => {
+    var tempArr = []
+orders.forEach(order=>{
+    order?.cartItems.forEach(item=>{
+        tempArr.push(item._id)
+    })
+})
+var set = new Set([...tempArr])
+tempArr = Array.from(set)
+
+async function getProducts(){
+    let products = new Map();
+    for(var i = 0; i < tempArr.length; i++){
+      
+    await axios.get(`http://localhost:5000/products/${tempArr[i]}`).then(res=>{
+        console.log(res.data)
+        products[res.data._id]= res.data
+    })
+
+    }
+    setProducts(products)
+}
+getProducts()
+}, [orders])
+
 function handleLogoutClick(){
     window.sessionStorage.setItem('session',null)
     navigate('/')
@@ -56,10 +82,14 @@ function handleLogoutClick(){
                 <h5>Order ID: {order._id}</h5>
                 {order.cartItems.map(item=>{return(
                 <div id="order-item">
-                    <p id='order-item-field'>Product - {item.title}</p>
+                    <img src={products[item._id]?.image}/>
+                    <idv className="order-item-info">
+                    <p id='order-item-field'>Product - {products[item._id]?.title}</p>
                     <p id='order-item-field'>Product ID -  {item._id}</p>
-                    <p id='order-item-field'>Price - ${item.price}</p>
-                    <p id='order-item-field'>Quantity -  {item.quantity}</p>
+                    <p id='order-item-field'>Price - ${products[item._id]?.price *item.q }</p>
+                    <p id='order-item-field'>Quantity -  {item.q}</p>
+                    </idv>
+                    
                     </div>)})}
 
             </div>)

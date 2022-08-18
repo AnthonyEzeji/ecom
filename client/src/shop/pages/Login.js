@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
-
+import '../css/Login.css'
 function Login() {
     var navigate = useNavigate()
     const [credentials, setCredentials] = useState({email:"", password:""})
@@ -21,16 +21,16 @@ function Login() {
         }
     }
     async function handleLoginClick(){
-        const req = await axios.post("http://44.208.28.123:5000/user/login", credentials)
+        const req = await axios.post("http://localhost:5000/user/login", credentials)
         if(req.status == 200){
             window.sessionStorage.setItem('session', JSON.stringify(req.data))
             navigate('/')
         }
     }
   return (
-  <div style = {{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', width:"100vw", height:'100vh'}} className="login">
+  <div style = {{}} className="login">
     <NavBar style = {{}}/>
-    <div style={{height:'fit-content', padding:'20px'}} className="form">
+    <div style={{height:'fit-content', padding:'20px'}} className="login-form">
         <h1 style={{margin:0}}>Login</h1>
         <div className="input-field">
             <Input disableUnderline={true} id = 'input' onChange = {(e)=>handleCredentialsChange(e)} placeholder='email'></Input>

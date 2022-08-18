@@ -10,10 +10,24 @@ router.get('/:_id',async(req,res)=>{
         await userModel.findById(req.params._id).then(doc=>{
             email = doc.email
             orderModel.find({email:email}).then(docs=>{
-                console.log(docs)
+            
                 res.send(docs)
         })
         })
+   
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({message:error})
+    }
+
+})
+router.get('/',async(req,res)=>{
+   
+    try {
+       
+   await orderModel.find({}).then(docs=>{
+    res.status(200).send(docs)
+   })
    
     } catch (error) {
         console.log(error)

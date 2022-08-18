@@ -1,0 +1,169 @@
+.customers{
+    width: 400px;
+}
+
+
+.customer-list-header{
+display: flex;
+justify-content: center;
+background-color: rgb(145, 150, 150);
+color: aliceblue;
+
+width: 100%;
+
+}
+.customer-list-header>h3{
+width: 100%;
+width: 100%;
+font-size: 25px;
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: rgb(0, 0, 0);
+
+
+}
+.customer-list-entry{
+    display: flex;
+    width: 100%;
+   
+}
+.customer-list-entry>p{
+   width: 100%;
+
+    
+}
+.customer-list{
+    margin: 0;
+    padding:0;
+    width: 398px;
+    border: 1px solid rgb(184, 181, 181);
+    height: 200px;
+}
+.customer-list-info{
+    overflow-y: scroll;
+
+height: 90%;
+}
+.admin-orders{
+    width: 400px;
+}
+.admin-order-list{
+    padding:0;
+    width: 398px;
+    border: 1px solid rgb(184, 181, 181);
+    height: 200px;
+}
+.admin-order-list-info{
+    overflow-y: scroll;
+ 
+    height: 90%;
+}
+.admin-order-list-entry>p{
+    width: 100%;
+}
+.admin-order-list-header>h3{
+    width: 100%;
+    width: 100%;
+    font-size: 25px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+    }
+.admin-order-list-header{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(145, 150, 150);
+    color: aliceblue;
+    
+    
+    width: 100%;
+    }
+.inventory-list-entry{
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid black;
+    
+  
+}
+.inventory-list-entry>p{
+    border-right: 1px solid black;
+    width:200px ;
+    padding:5px;
+    background-color: aliceblue;
+}
+.inventory-list-entry>h5{
+    border-right: 1px solid black;
+    width:200px ;
+    padding:5px;
+    
+   
+}
+.inventory-list{
+    padding: 0;
+    height: 200px;
+    overflow-y: scroll;
+    width:fit-content;
+    margin: 0;
+}
+.inventory-list-header{
+    border: 1px solid black;
+width: 99.9%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(145, 150, 150);
+    color: aliceblue;
+}
+.inventory-list-header>h3{
+    width: 100%;
+    font-size: 25px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+}
+.inventory{
+    margin: 20px;;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: fit-content;
+   
+}
+.revenue{
+   width: 400px;
+}
+.revenue-header{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(145, 150, 150);
+    color: aliceblue;
+    
+    
+    width: 100%;
+}
+.revenue-header>h3{
+    width: 100%;
+    font-size: 25px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+
+}
+.revenue-body{
+    margin: 0;
+    padding:0;
+   
+    border: 1px solid rgb(184, 181, 181);
+    height: 200px;
+}
+.dashboard{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  background-color: rgb(195, 197, 197);
+    align-items: center;
+}
+.dashboard-top{
+    display: flex;
+    width: 100%;
+    background-color: azure;
+}

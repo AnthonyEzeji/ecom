@@ -1,6 +1,6 @@
 const express = require('express')
 const productModel = require('./productModel')
-var router = express.Router()
+const router = express.Router()
 
 router.get('/',async (req,res)=>{
 
@@ -19,6 +19,7 @@ router.get('/',async (req,res)=>{
    
 })
 router.get('/:_id',async (req,res)=>{
+    console.log(req.params)
 try {
     await productModel.findById(req.params._id).then((doc,err)=>{
         if(err){

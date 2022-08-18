@@ -2,12 +2,13 @@ import { Button, Input } from '@mui/material'
 import axios from 'axios'
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import NavBar from '../components/NavBar';
 import '../css/Register.css'
 function Register() {
     const [user, setUser] = useState({email:"", password:"", firstName:"", lastName:""});
 
     async function handleRegisterClick(){
-        await axios.post('http://44.208.28.123:5000/user/register',user)
+        await axios.post('http://localhost:5000/user/register',user)
     }
 
     function handleUserChange(e){
@@ -33,8 +34,9 @@ function Register() {
   return (
 <div className="register">
 
-
+<NavBar/>
 <div className="form">
+    
     <h1>Register</h1>
     <div className="input-field">
         <Input  onChange={(e)=>handleUserChange(e)} id="input" disableUnderline={true} placeholder='First Name'></Input>

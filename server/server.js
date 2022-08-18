@@ -6,9 +6,10 @@ const StripeRoute = require('./Stripe')
 const webhookRoutes = require('./webhookRoutes')
 const userRoutes = require('./user/userRoutes')
 const orderRoutes = require('./orders/orderRoutes')
+const productRoutes = require('./products/productRoutes')
 require('dotenv').config()
 
-const productRoutes = require('./products/productRoutes')
+
 
 mongoose.connect(process.env.DB,{useNewUrlParser: true,useUnifiedTopology: true }, ()=>console.log('successfully connected to db...'))
 

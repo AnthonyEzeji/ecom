@@ -3,9 +3,9 @@ const express = require('express')
 const router = express.Router()
 
 router.post('/',async (req,res)=>{
-  const metadata = {email:req.body.session.email,cartItems:JSON.stringify(req.body.cartItems.map(item=>{return {title:item.title, quantity:item.quantity, price:item.price,_id:item._id}}))}
+  const metadata = {email:req.body.session.email,cartItems:JSON.stringify(req.body.cartItems.map(item=>{return { q:item.quantity,_id:item._id}}))}
 
-  
+  console.log(metadata)
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
   try {
