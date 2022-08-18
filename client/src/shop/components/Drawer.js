@@ -30,7 +30,12 @@ function Drawer() {
 
 </div>
 <div className="tab">
-    
+   <p>H</p>
+   <p>O</p>
+   <p>V</p>
+   <p>E</p>
+   <p>R</p>
+ 
 </div>
 
 

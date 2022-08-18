@@ -2,14 +2,16 @@
    display: flex;
    justify-content: center;
    align-items: center;
-
+  
    width: 90%;
    padding-top:100px;
 
 }
 .product-page{
+    padding-top:50px;
     display: flex;
     min-height:100vh;
+   
     flex-direction: column;
     background-color: rgb(183, 187, 190);
     align-items: center;

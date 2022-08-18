@@ -36,8 +36,19 @@ font-weight: 300;
 }
 .tab{
     background-color:rgb(18, 21, 22);
-    height: 50px;
+    height: fit-content;
+    padding-right:5px;
     width: 340px;
+    display: flex;
+    font-size:12px;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+}
+.tab>p{
+    margin:0;
+    text-align: center;
 }
 .drawer:hover{
     left:0

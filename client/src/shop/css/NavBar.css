@@ -2,11 +2,13 @@
     display: flex;
     height: 50px;
     justify-content: flex-end;
-width: 100vw;
+width: 100%;
 background-color: rgb(0, 0, 0);
     padding-right:10px;
     align-items: center;
 color: rgb(66, 126, 126);
+top:0;
+position: fixed;
 }
 #cart-amount{
     font-weight: 100;
