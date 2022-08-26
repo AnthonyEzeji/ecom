@@ -22,11 +22,15 @@ function Login() {
         }
     }
     async function handleLoginClick(){
-        const req = await axios.post("http://3.87.187.44:5000/user/login", credentials)
-        if(req.status == 200){
-            window.sessionStorage.setItem('session', JSON.stringify(req.data))
-            navigate('/')
-        }
+        const req = await axios.post("http://3.87.187.44:5000/user/login", credentials).then(res=>{
+            if(res.status == 200 && !res.data.hasOwnProperty('message')){
+                window.sessionStorage.setItem('session', JSON.stringify(res.data))
+                navigate('/')
+            }else {
+                alert(res.data.message)
+            }
+        })
+        
     }
   return (
   <div style = {{}} className="login">
