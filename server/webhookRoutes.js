@@ -13,7 +13,7 @@ router.post('/', (req, response) => {
 
   try {
     event = req.body;
-
+    console.log(event)
    
   } catch (err) {
     console.log(err + "<--------this is an error")
