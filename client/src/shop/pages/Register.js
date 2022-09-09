@@ -10,7 +10,7 @@ function Register() {
     const navigate = useNavigate()
     async function handleRegisterClick(e){
         e.preventDefault()
-        await axios.post('http://3.87.187.44:5000/user/register',user).then(res=>{
+        await axios.post('3.87.187.44:5001/user/register',user).then(res=>{
             console.log(res.data)
             if(res.data.hasOwnProperty('message')){
                 alert(res.data.message)
