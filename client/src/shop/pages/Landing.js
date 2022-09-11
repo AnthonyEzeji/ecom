@@ -46,7 +46,7 @@ function Landing() {
 //
     useEffect(() => {
       async function getProducts(){
-        await axios.get('3.87.187.44:5001/products').then(res=>{
+        await axios.get('http://3.87.187.44:5001/products').then(res=>{
             setProducts(res.data)
         })
       }getProducts()

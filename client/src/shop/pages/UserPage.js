@@ -20,7 +20,7 @@ const [previewSize, setPreviewSize] = useState(5)
 useEffect(() => {
      setUser(JSON.parse(window.sessionStorage.getItem('session')))
 async function getUserOrders(){
-    await axios.get(`3.87.187.44:5001/orders/${JSON.parse(window.sessionStorage.getItem('session'))._id}`).then(res=>{setOrders(res.data.reverse())})
+    await axios.get(`http://3.87.187.44:5001/orders/${JSON.parse(window.sessionStorage.getItem('session'))._id}`).then(res=>{setOrders(res.data.reverse())})
 }
 getUserOrders()
 }, [])
@@ -38,7 +38,7 @@ async function getProducts(){
     let products = new Map();
     for(var i = 0; i < tempArr.length; i++){
       
-    await axios.get(`3.87.187.44:5001/products/${tempArr[i]}`).then(res=>{
+    await axios.get(`http://3.87.187.44:5001/products/${tempArr[i]}`).then(res=>{
         console.log(res.data)
         products[res.data._id]= res.data
     })
@@ -80,7 +80,7 @@ useEffect(() => {
 //
 useEffect(() => {
   async function getProducts(){
-    await axios.get('3.87.187.44:5001/products').then(res=>{
+    await axios.get('http://3.87.187.44:5001/products').then(res=>{
         setProducts(res.data)
     })
   }getProducts()

@@ -8,7 +8,7 @@ function Dashboard() {
   const [customers, setCustomers] = useState([])
   useEffect(() => {
     async function getInfo(){
-      const base_url = "3.87.187.44:5001"
+      const base_url = "http://3.87.187.44:5001"
       await axios.get(base_url+'/products').then(res=>{
         setProducts(res.data)
       })

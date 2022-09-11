@@ -22,7 +22,7 @@ function Login() {
         }
     }
     async function handleLoginClick(){
-        const req = await axios.post("3.87.187.44:5001/user/login", credentials).then(res=>{
+        const req = await axios.post("http://3.87.187.44:5001/user/login", credentials).then(res=>{
             if(res.status == 200 && !res.data.hasOwnProperty('message')){
                 window.sessionStorage.setItem('session', JSON.stringify(res.data))
                 navigate('/')
