@@ -17,9 +17,7 @@ var app = express()
 
 
 app.use(cors(), express.json())
-app.get((req,res)=>{
-    res.send('hello')
-})
+
 app.use('/products', productRoutes)
 app.use('/api/stripe', StripeRoute)
 app.use('/webhook', webhookRoutes)

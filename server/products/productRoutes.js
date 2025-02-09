@@ -3,7 +3,7 @@ const productModel = require('./productModel')
 const router = express.Router()
 
 router.get('/',async (req,res)=>{
-console.log(1)
+
     try {
         await productModel.find({}).then((docs,err)=>{
             
