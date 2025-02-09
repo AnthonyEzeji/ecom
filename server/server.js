@@ -7,7 +7,7 @@ const webhookRoutes = require('./webhookRoutes')
 const userRoutes = require('./user/userRoutes')
 const orderRoutes = require('./orders/orderRoutes')
 const productRoutes = require('./products/productRoutes')
-require('dotenv').config()
+
 
 
 
